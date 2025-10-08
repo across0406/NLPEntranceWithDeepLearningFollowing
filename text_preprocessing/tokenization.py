@@ -22,7 +22,7 @@ import tensorflow as tf
 
 
 def test_word_tokenization() -> None:
-    target = "Don't be fooled by the dark sounding name, Mar.Jone's Orphanage is as cheery as cheery goes for a pastry shop."
+    target = "Don't be fooled by the dark sounding name, Mr.Jone's Orphanage is as cheery as cheery goes for a pastry shop."
     tokenized = word_tokenize(target)
     print('Word Tokenization 1 (with word_tokenize on NLTK):', tokenized)
     tokenized = WordPunctTokenizer().tokenize(target)
