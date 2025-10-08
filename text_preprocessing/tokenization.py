@@ -70,6 +70,6 @@ def test_pos_tag() -> None:
 
 
 if __name__ == '__main__':
-    # test_word_tokenization()
-    # test_sentence_tokenization()
+    test_word_tokenization()
+    test_sentence_tokenization()
     test_pos_tag()

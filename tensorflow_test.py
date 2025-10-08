@@ -3,7 +3,6 @@ import pandas as pd
 import keras
 from keras import layers
 import matplotlib
-matplotlib.use('Qt5Agg')
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -19,9 +18,16 @@ def create_sequences(values, time_steps=TIME_STEPS):
 
 
 def test() -> None:
-    print(tf.test.is_built_with_cuda())
-    print(tf.config.list_physical_devices('GPU'))
-    print(tf.sysconfig.get_build_info())
+    gpus = tf.config.list_physical_devices('GPU')
+    if gpus:
+        print("CUDA is available.")
+        print(gpus)
+        print(tf.sysconfig.get_build_info())
+        matplotlib.use('Qt5Agg')
+    else:
+        print("CUDA is not available.")
+        print("Running on CPU.")
+        matplotlib.use('TkAgg')
 
     # This code is from 'https://keras.io/examples/timeseries/timeseries_anomaly_detection/'
     master_url_root = "https://raw.githubusercontent.com/numenta/NAB/master/data/"
