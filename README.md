@@ -37,3 +37,6 @@ Although I have decided this code under the MIT License, it was created based on
     pip install -r [requirements text file]
     # e.g. pip install -r requirements_python3.9_cuda12.9_cudnn8.9.7.txt
     ```
+
+## Notes
+- If you want to setup and execute this project on Steamdeck, you cannot execute some scripts, especially using python-mecab-kor.
